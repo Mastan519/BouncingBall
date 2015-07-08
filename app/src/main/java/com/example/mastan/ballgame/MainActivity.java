@@ -49,11 +49,12 @@ public class MainActivity extends Activity {
 
     public void pause(View v)
     {
-        paused = true;
-        for (int i=0; i< surface.getChildCount(); i++)
-        {
-           if(surface.getChildAt(i) instanceof BouncingBallView)
-               ((BouncingBallView)surface.getChildAt(i)).pause();
+        if(!paused) {
+            paused = true;
+            for (int i = 0; i < surface.getChildCount(); i++) {
+                if (surface.getChildAt(i) instanceof BouncingBallView)
+                    ((BouncingBallView) surface.getChildAt(i)).pause();
+            }
         }
 
     }
